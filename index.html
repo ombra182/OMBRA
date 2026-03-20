@@ -1,6 +1,3 @@
-<div style="text-align:center; padding-top:20px;">
-  <img src="520774e2-df03-4adb-b0c1-1617a81ea519.heic" alt="Ombra Logo" style="width:80px; opacity:0.9;">
-</div>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,12 +12,13 @@
       color: white;
       font-family: Helvetica, sans-serif;
       text-align: center;
+      overflow-x: hidden;
     }
 
     h1 {
       font-size: 80px;
       letter-spacing: 8px;
-      margin-top: 100px;
+      margin-top: 40px;
     }
 
     p {
@@ -29,18 +27,27 @@
       margin: 20px auto;
     }
 
+    .logo-top {
+      margin-top: 20px;
+    }
+
+    .logo-top img {
+      width: 80px;
+      opacity: 0.9;
+    }
+
     .btn {
       margin-top: 30px;
-      padding: 12px 25px;
-      border: 1px solid white;
-      display: inline-block;
-      text-decoration: none;
+      padding: 15px 30px;
+      border: none;
+      background: red;
       color: white;
+      font-size: 16px;
+      cursor: pointer;
     }
 
     .btn:hover {
-      background: white;
-      color: black;
+      opacity: 0.8;
     }
 
     .gallery {
@@ -60,39 +67,50 @@
       margin-top: 100px;
       padding: 20px;
     }
+
+    .bg-logo {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: 0.05;
+      z-index: -1;
+    }
+
+    .bg-logo img {
+      width: 500px;
+    }
+
+    iframe {
+      margin-top: 30px;
+    }
   </style>
 </head>
 
 <body>
-<div style="background-color:black; color:white; font-family:sans-serif;">
-position: fixed;
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%);
-opacity: 0.05;
-z-index: -1;
-">
-  <img src="520774e2-df03-4adb-b0c1-1617a81ea519.heic" style="width:500px;">
-</div>
-  <h1>OMBRA</h1>
-  <p>Black ink. Real stories. No noise.</p>
 
-<a href="https://instagram.com/TUOUSERNAME" target="_blank">
-  <button style="
-    background-color:red;
-    color:white;
-    padding:15px 30px;
-    border:none;
-    font-size:16px;
-    cursor:pointer;
-    margin-top:20px;
-  ">
-    BOOK APPOINTMENT
-  </button>
-</a>
-  
+  <!-- LOGO BACKGROUND -->
+  <div class="bg-logo">
+    <img src="logo.png.PNG">
+  </div>
+
+  <!-- LOGO TOP -->
+  <div class="logo-top">
+    <img src="logo.png.PNG" alt="Ombra Logo">
+  </div>
+
+  <!-- HERO -->
+  <h1>OMBRA</h1>
+  <p>Black Ink. Real Stories. No Noise.</p>
+
+  <!-- BUTTON -->
+  <a href="https://instagram.com/TUOUSERNAME" target="_blank">
+    <button class="btn">BOOK APPOINTMENT</button>
+  </a>
+
+  <!-- WORK -->
   <div class="section">
-    <h2>WORK</h2>
+    <h2 style="color:red;">WORK</h2>
   </div>
 
   <div class="gallery">
@@ -102,9 +120,36 @@ z-index: -1;
     <img src="IMG_7354.JPG">
   </div>
 
+  <!-- ABOUT -->
   <div class="section">
-    <h2>ABOUT</h2>
-    <p>OMBRA is a creative project blending tattooing, music and raw visual storytelling. Every piece is designed to leave a mark.</p>
+    <h2 style="color:red;">ABOUT</h2>
+    <p>
+      Ombra is not just a tattoo.<br>
+      It's a story carved in black.<br><br>
+      Melbourne based artist.
+    </p>
+  </div>
+
+  <!-- MUSIC -->
+  <div class="section">
+    <h2 style="color:red;">MUSIC</h2>
+
+    <iframe style="border-radius:12px"
+      src="https://open.spotify.com/embed/artist/3tJNxQA0mCn22uO3lC8mOW"
+      width="300"
+      height="80"
+      frameBorder="0"
+      allow="autoplay; clipboard-write; encrypted-media;">
+    </iframe>
+
+  </div>
+
+  <!-- CTA -->
+  <div class="section">
+    <p>Ready to wear your story?</p>
+    <a href="https://instagram.com/TUOUSERNAME" target="_blank">
+      <button class="btn">BOOK NOW</button>
+    </a>
   </div>
 
 </body>
