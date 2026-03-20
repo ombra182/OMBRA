@@ -21,6 +21,10 @@
       margin-top: 40px;
     }
 
+    h2 {
+      letter-spacing: 3px;
+    }
+
     p {
       color: #aaa;
       max-width: 500px;
@@ -66,6 +70,16 @@
     .section {
       margin-top: 100px;
       padding: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeIn 1s forwards;
+    }
+
+    @keyframes fadeIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .bg-logo {
@@ -84,17 +98,27 @@
     iframe {
       margin-top: 30px;
     }
+
+    input, textarea {
+      background: #111;
+      border: 1px solid #333;
+      color: white;
+      width: 80%;
+      margin: 5px;
+      padding: 10px;
+      border-radius: 5px;
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- LOGO BACKGROUND -->
+  <!-- BACKGROUND LOGO -->
   <div class="bg-logo">
     <img src="logo.png.PNG">
   </div>
 
-  <!-- LOGO TOP -->
+  <!-- TOP LOGO -->
   <div class="logo-top">
     <img src="logo.png.PNG" alt="Ombra Logo">
   </div>
@@ -103,8 +127,8 @@
   <h1>OMBRA</h1>
   <p>Black Ink. Real Stories. No Noise.</p>
 
-  <!-- BUTTON -->
-  <a href="https://instagram.com/ombratattoo" target="_blank">
+  <!-- BOOK BUTTON (DM DIRECT) -->
+  <a href="https://ig.me/m/TUOUSERNAME" target="_blank">
     <button class="btn">BOOK APPOINTMENT</button>
   </a>
 
@@ -126,13 +150,13 @@
     <p>
       Ombra is not just a tattoo.<br>
       It's a story carved in black.<br><br>
-      Melbourne based artist.
+      Melbourne based artist blending tattooing, music and visual storytelling.
     </p>
   </div>
 
   <!-- MUSIC -->
   <div class="section">
-    <h2 style="color:red;">MUSIC</h2>
+    <h2 style="color:red;">LATEST RELEASE</h2>
 
     <iframe style="border-radius:12px"
       src="https://open.spotify.com/embed/artist/3tJNxQA0mCn22uO3lC8mOW"
@@ -142,14 +166,35 @@
       allow="autoplay; clipboard-write; encrypted-media;">
     </iframe>
 
+    <p style="color:#666;">Listen to Emmeombra on Spotify</p>
   </div>
 
-  <!-- CTA -->
+  <!-- BOOKING FORM -->
+  <div class="section">
+    <h2 style="color:red;">BOOKING</h2>
+
+    <form action="https://formsubmit.co/TUOEMAIL" method="POST">
+      <input type="text" name="name" placeholder="Your name" required><br>
+      <input type="text" name="idea" placeholder="Tattoo idea" required><br>
+      <input type="text" name="budget" placeholder="Budget"><br>
+      <textarea name="message" placeholder="Tell me more..."></textarea><br>
+
+      <button class="btn" type="submit">SEND REQUEST</button>
+    </form>
+  </div>
+
+  <!-- FINAL CTA -->
   <div class="section">
     <p>Ready to wear your story?</p>
-    <a href="https://instagram.com/TUOUSERNAME" target="_blank">
+    <a href="https://ig.me/m/TUOUSERNAME" target="_blank">
       <button class="btn">BOOK NOW</button>
     </a>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="section">
+    <img src="logo.png.PNG" style="width:40px; opacity:0.6;">
+    <p style="color:#444;">OMBRA • Melbourne</p>
   </div>
 
 </body>
