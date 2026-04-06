@@ -35,10 +35,25 @@
     }
     .btn:hover { opacity: 0.8; transform: scale(1.05); }
 
-    .gallery { margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
+    /* Gallery responsive */
+    .gallery {
+      margin-top: 80px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      padding: 20px;
+    }
     .gallery-item { position: relative; overflow: hidden; cursor: pointer; border-radius: 5px; }
-    .gallery-item img { width: 100%; height: auto; transition: transform 0.5s ease, filter 0.5s ease; display: block; }
-    .gallery-item:hover img { transform: scale(1.05); filter: brightness(70%) sepia(20%) hue-rotate(-20deg); }
+    .gallery-item img {
+      width: 100%;
+      height: auto;
+      transition: transform 0.5s ease, filter 0.5s ease;
+      display: block;
+    }
+    .gallery-item:hover img {
+      transform: scale(1.05);
+      filter: brightness(70%) sepia(20%) hue-rotate(-20deg);
+    }
 
     .section {
       margin-top: 100px;
@@ -81,7 +96,7 @@
 
 <body>
 
-  <!-- BACKGROUND LOGO (parallax) -->
+  <!-- BACKGROUND LOGO -->
   <div class="bg-logo" id="bgLogo">
     <img src="logo.png.PNG" alt="Ombra Logo Background">
   </div>
@@ -95,7 +110,7 @@
   <h1>OMBRA</h1>
   <p>Black Ink. Real Stories. No Noise.</p>
 
-  <!-- BOOK BUTTON (DM DIRECT) -->
+  <!-- BOOK BUTTON -->
   <a href="https://instagram.com/ombratattoo" target="_blank">
     <button class="btn">BOOK APPOINTMENT</button>
   </a>
@@ -110,6 +125,8 @@
     <div class="gallery-item"><img src="IMG_2534.JPG" alt="Tattoo work 2"></div>
     <div class="gallery-item"><img src="IMG_5224.JPG" alt="Tattoo work 3"></div>
     <div class="gallery-item"><img src="IMG_7354.JPG" alt="Tattoo work 4"></div>
+    <!-- Aggiungi nuove foto qui -->
+    <!-- <div class="gallery-item"><img src="NUOVA_FOTO.JPG" alt="Tattoo work"></div> -->
   </div>
 
   <!-- ABOUT -->
@@ -125,7 +142,6 @@
   <!-- MUSIC -->
   <div class="section">
     <h2 style="color:red;">LATEST RELEASE</h2>
-
     <iframe style="border-radius:12px"
       src="https://open.spotify.com/embed/artist/3tJNxQA0mCn22uO3lC8mOW"
       width="300"
@@ -133,21 +149,18 @@
       frameborder="0"
       allow="autoplay; clipboard-write; encrypted-media;">
     </iframe>
-
     <p style="color:#666;">Listen to Emmeombra on Spotify</p>
   </div>
 
   <!-- BOOKING FORM -->
   <div class="section">
     <h2 style="color:red;">BOOKING</h2>
-
     <form action="https://formsubmit.co/ombratatt@gmail.com" method="POST">
       <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your name" required><br>
       <input type="text" name="idea" placeholder="Tattoo idea" required><br>
       <input type="text" name="budget" placeholder="Budget"><br>
       <textarea name="message" placeholder="Tell me more..."></textarea><br>
-
       <button class="btn" type="submit">SEND REQUEST</button>
     </form>
   </div>
