@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>OMBRA</title>
+  <meta name="description" content="Ombra Tattoos - Melbourne tattoo artist blending ink, music, and visual storytelling.">
 
   <style>
     body {
@@ -15,30 +16,12 @@
       overflow-x: hidden;
     }
 
-    h1 {
-      font-size: 80px;
-      letter-spacing: 8px;
-      margin-top: 40px;
-    }
+    h1 { font-size: 80px; letter-spacing: 8px; margin-top: 40px; }
+    h2 { letter-spacing: 3px; }
+    p { color: #aaa; max-width: 500px; margin: 20px auto; line-height: 1.5; }
 
-    h2 {
-      letter-spacing: 3px;
-    }
-
-    p {
-      color: #aaa;
-      max-width: 500px;
-      margin: 20px auto;
-    }
-
-    .logo-top {
-      margin-top: 20px;
-    }
-
-    .logo-top img {
-      width: 80px;
-      opacity: 0.9;
-    }
+    .logo-top { margin-top: 20px; }
+    .logo-top img { width: 80px; opacity: 0.9; }
 
     .btn {
       margin-top: 30px;
@@ -48,24 +31,28 @@
       color: white;
       font-size: 16px;
       cursor: pointer;
+      transition: transform 0.2s, opacity 0.2s;
     }
+    .btn:hover { opacity: 0.8; transform: scale(1.05); }
 
-    .btn:hover {
-      opacity: 0.8;
-    }
+    .gallery { margin-top: 80px; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; padding: 20px; }
+    .gallery-item { position: relative; overflow: hidden; cursor: pointer; border-radius: 5px; }
+    .gallery-item img { width: 100%; height: auto; transition: transform 0.5s ease, filter 0.5s ease; display: block; }
+    .gallery-item:hover img { transform: scale(1.05); filter: brightness(70%); }
 
-    .gallery {
-      margin-top: 80px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 10px;
-      padding: 20px;
+    .gallery-item .overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      display: flex; align-items: center; justify-content: center;
+      color: white;
+      font-weight: bold;
+      font-size: 18px;
+      background: rgba(255,0,0,0.3);
+      opacity: 0;
+      transition: opacity 0.3s ease;
     }
-
-    .gallery img {
-      width: 100%;
-      height: auto;
-    }
+    .gallery-item:hover .overlay { opacity: 1; }
 
     .section {
       margin-top: 100px;
@@ -74,13 +61,7 @@
       transform: translateY(20px);
       animation: fadeIn 1s forwards;
     }
-
-    @keyframes fadeIn {
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
+    @keyframes fadeIn { to { opacity: 1; transform: translateY(0); } }
 
     .bg-logo {
       position: fixed;
@@ -89,15 +70,11 @@
       transform: translate(-50%, -50%);
       opacity: 0.05;
       z-index: -1;
+      max-width: 80vw;
+      transition: transform 0.3s ease;
     }
 
-    .bg-logo img {
-      width: 500px;
-    }
-
-    iframe {
-      margin-top: 30px;
-    }
+    iframe { margin-top: 30px; max-width: 100%; }
 
     input, textarea {
       background: #111;
@@ -108,14 +85,19 @@
       padding: 10px;
       border-radius: 5px;
     }
+
+    @media (max-width: 600px) {
+      h1 { font-size: 50px; }
+      .gallery { grid-template-columns: 1fr; }
+    }
   </style>
 </head>
 
 <body>
 
-  <!-- BACKGROUND LOGO -->
-  <div class="bg-logo">
-    <img src="logo.png.PNG">
+  <!-- BACKGROUND LOGO (parallax) -->
+  <div class="bg-logo" id="bgLogo">
+    <img src="logo.png.PNG" alt="Ombra Logo Background">
   </div>
 
   <!-- TOP LOGO -->
@@ -128,7 +110,7 @@
   <p>Black Ink. Real Stories. No Noise.</p>
 
   <!-- BOOK BUTTON (DM DIRECT) -->
-  <a href="https://ig.me/m/TUOUSERNAME" target="_blank">
+  <a href="https://instagram.com/ombratattoo" target="_blank">
     <button class="btn">BOOK APPOINTMENT</button>
   </a>
 
@@ -138,10 +120,22 @@
   </div>
 
   <div class="gallery">
-    <img src="IMG_1360.jpeg">
-    <img src="IMG_2534.JPG">
-    <img src="IMG_5224.JPG">
-    <img src="IMG_7354.JPG">
+    <div class="gallery-item">
+      <img src="IMG_1360.jpeg" alt="Tattoo work 1">
+      <div class="overlay">Tattoo 1</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_2534.JPG" alt="Tattoo work 2">
+      <div class="overlay">Tattoo 2</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_5224.JPG" alt="Tattoo work 3">
+      <div class="overlay">Tattoo 3</div>
+    </div>
+    <div class="gallery-item">
+      <img src="IMG_7354.JPG" alt="Tattoo work 4">
+      <div class="overlay">Tattoo 4</div>
+    </div>
   </div>
 
   <!-- ABOUT -->
@@ -162,7 +156,7 @@
       src="https://open.spotify.com/embed/artist/3tJNxQA0mCn22uO3lC8mOW"
       width="300"
       height="80"
-      frameBorder="0"
+      frameborder="0"
       allow="autoplay; clipboard-write; encrypted-media;">
     </iframe>
 
@@ -173,7 +167,8 @@
   <div class="section">
     <h2 style="color:red;">BOOKING</h2>
 
-    <form action="https://formsubmit.co/TUOEMAIL" method="POST">
+    <form action="https://formsubmit.co/ombratatt@gmail.com" method="POST">
+      <input type="hidden" name="_captcha" value="false">
       <input type="text" name="name" placeholder="Your name" required><br>
       <input type="text" name="idea" placeholder="Tattoo idea" required><br>
       <input type="text" name="budget" placeholder="Budget"><br>
@@ -186,16 +181,33 @@
   <!-- FINAL CTA -->
   <div class="section">
     <p>Ready to wear your story?</p>
-    <a href="https://ig.me/m/TUOUSERNAME" target="_blank">
+    <a href="https://instagram.com/ombratattoo" target="_blank">
       <button class="btn">BOOK NOW</button>
     </a>
   </div>
 
   <!-- FOOTER -->
   <div class="section">
-    <img src="logo.png.PNG" style="width:40px; opacity:0.6;">
+    <img src="logo.png.PNG" style="width:40px; opacity:0.6;" alt="Ombra Logo">
     <p style="color:#444;">OMBRA • Melbourne</p>
   </div>
+
+  <!-- PARALLAX & SCROLL ANIMATIONS -->
+  <script>
+    const bgLogo = document.getElementById('bgLogo');
+    window.addEventListener('scroll', () => {
+      let offset = window.scrollY;
+      bgLogo.style.transform = `translate(-50%, calc(-50% + ${offset * 0.2}px))`;
+    });
+
+    const sections = document.querySelectorAll('.section');
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if(entry.isIntersecting) entry.target.style.opacity = 1;
+      });
+    }, { threshold: 0.1 });
+    sections.forEach(section => observer.observe(section));
+  </script>
 
 </body>
 </html>
